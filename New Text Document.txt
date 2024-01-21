@@ -1,8 +1,0 @@
-Case 1- If we have explicity mentioned the line item eff & exp, and later when we try to do edit contract term amendment we have an hard stop from creating the bad data (fixed in this bug GTBUG-102793). 
-for eg: COntract term = 01-dec-2023 to 30-nov-2024
-  line item eff & exp = 05-dec-2023 to 30-nov-2024
-when tried to edit contract term amend by providing the term dates as 07-dec-2023 to 25-nov-2023, not possible because we have an hard stop now.
-
-case 2- IF we have created a contract with the term as 01-dec-2023 to 30-nov-2024 and if we dont provide line item eff & exp explicitly, line items will consider contract term dates as eff & exp. Now if we do edit contract term amendment by provding the expiry date as 25-nov-2023, amendment happens and line item expiry will also get changed from 30-nov-2024 to 25-nov-2023.
-
-Case 3- IF we have created a contract with the term as 01-dec-2023 to 30-nov-2024 and if we dont provide line item eff & exp explicitly, line items will consider contract term dates as eff & exp. Now if we do edit contract term amendment by provding the effective date as 07-dec-2023, amendment happens but in this case line effective don't change it'll remain as 01-dec-2023.
